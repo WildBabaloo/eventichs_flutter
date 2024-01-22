@@ -1,3 +1,4 @@
+import 'package:eventichs_flutter/entities/organisation.dart';
 import 'package:flutter/material.dart';
 import 'entities/user.dart';
 
@@ -15,5 +16,11 @@ class MyAppState extends ChangeNotifier {
           User(id: 3, firstName: "Phillipe", lastName: "Gusto", email: "gustoP@gmail.com", password: "password")
       ];
   }
+
+  //List<Organisation> seedDataOrganisations() {
+    //return <Organisation>[
+      //Organisation(id: 1, userOwner: , organisationName: organisationName, isPublic: isPublic)
+    //]
+  //}
 
 }
