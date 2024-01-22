@@ -4,13 +4,11 @@ class Organisation {
   int id;
   User userOwner;
   String organisationName;
-  bool isPublic;
 
   Organisation(
       {required this.id,
       required this.userOwner,
-      required this.organisationName,
-      required this.isPublic});
+      required this.organisationName,});
 
   get getId => this.id;
 
@@ -24,8 +22,4 @@ class Organisation {
 
   set setOrganisationName(organisationName) =>
       this.organisationName = organisationName;
-
-  get getIsPublic => this.isPublic;
-
-  set setIsPublic(isPublic) => this.isPublic = isPublic;
 }

@@ -10,7 +10,7 @@ class Event {
   String location;
   DateTime startTime;
   DateTime endTime;
-  get getId => this.id;
+  bool isPublic;
 
   Event(
       {required this.id,
@@ -20,7 +20,10 @@ class Event {
       required this.description,
       required this.location,
       required this.startTime,
-      required this.endTime});
+      required this.endTime,
+      required this.isPublic});
+
+  get getId => this.id;
 
   set setId(id) => this.id = id;
 
@@ -51,4 +54,8 @@ class Event {
   get getEndTime => this.endTime;
 
   set setEndTime(endTime) => this.endTime = endTime;
+
+  get getIsPublic => this.isPublic;
+
+  set setIsPublic(isPublic) => this.isPublic = isPublic;
 }
