@@ -1,3 +1,4 @@
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,25 +12,89 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      themeMode: ThemeMode.dark,
+      theme: FlexThemeData.light(
+        scheme: FlexScheme.deepOrangeM3,
+        subThemesData: const FlexSubThemesData(
+          interactionEffects: false,
+          tintedDisabledControls: false,
+          blendOnColors: false,
+          useTextTheme: true,
+          inputDecoratorBorderType: FlexInputBorderType.underline,
+          inputDecoratorUnfocusedBorderIsColored: false,
+          alignedDropdown: true,
+          tooltipRadius: 4,
+          tooltipSchemeColor: SchemeColor.inverseSurface,
+          tooltipOpacity: 0.9,
+          useInputDecoratorThemeInDialogs: true,
+          snackBarElevation: 6,
+          snackBarBackgroundSchemeColor: SchemeColor.inverseSurface,
+          navigationBarSelectedLabelSchemeColor: SchemeColor.onSurface,
+          navigationBarUnselectedLabelSchemeColor: SchemeColor.onSurface,
+          navigationBarMutedUnselectedLabel: false,
+          navigationBarSelectedIconSchemeColor: SchemeColor.onSurface,
+          navigationBarUnselectedIconSchemeColor: SchemeColor.onSurface,
+          navigationBarMutedUnselectedIcon: false,
+          navigationBarIndicatorSchemeColor: SchemeColor.secondaryContainer,
+          navigationBarIndicatorOpacity: 1.00,
+          navigationRailSelectedLabelSchemeColor: SchemeColor.onSurface,
+          navigationRailUnselectedLabelSchemeColor: SchemeColor.onSurface,
+          navigationRailMutedUnselectedLabel: false,
+          navigationRailSelectedIconSchemeColor: SchemeColor.onSurface,
+          navigationRailUnselectedIconSchemeColor: SchemeColor.onSurface,
+          navigationRailMutedUnselectedIcon: false,
+          navigationRailIndicatorSchemeColor: SchemeColor.secondaryContainer,
+          navigationRailIndicatorOpacity: 1.00,
+          navigationRailBackgroundSchemeColor: SchemeColor.surface,
+          navigationRailLabelType: NavigationRailLabelType.none,
+        ),
+        keyColors: const FlexKeyColors(),
+        visualDensity: FlexColorScheme.comfortablePlatformDensity,
         useMaterial3: true,
+        swapLegacyOnMaterial3: true,
+        // To use the Playground font, add GoogleFonts package and uncomment
+        // fontFamily: GoogleFonts.notoSans().fontFamily,
+      ),
+      darkTheme: FlexThemeData.dark(
+        scheme: FlexScheme.deepOrangeM3,
+        subThemesData: const FlexSubThemesData(
+          interactionEffects: false,
+          tintedDisabledControls: false,
+          useTextTheme: true,
+          inputDecoratorBorderType: FlexInputBorderType.underline,
+          inputDecoratorUnfocusedBorderIsColored: false,
+          alignedDropdown: true,
+          tooltipRadius: 4,
+          tooltipSchemeColor: SchemeColor.inverseSurface,
+          tooltipOpacity: 0.9,
+          useInputDecoratorThemeInDialogs: true,
+          snackBarElevation: 6,
+          snackBarBackgroundSchemeColor: SchemeColor.inverseSurface,
+          navigationBarSelectedLabelSchemeColor: SchemeColor.onSurface,
+          navigationBarUnselectedLabelSchemeColor: SchemeColor.onSurface,
+          navigationBarMutedUnselectedLabel: false,
+          navigationBarSelectedIconSchemeColor: SchemeColor.onSurface,
+          navigationBarUnselectedIconSchemeColor: SchemeColor.onSurface,
+          navigationBarMutedUnselectedIcon: false,
+          navigationBarIndicatorSchemeColor: SchemeColor.secondaryContainer,
+          navigationBarIndicatorOpacity: 1.00,
+          navigationRailSelectedLabelSchemeColor: SchemeColor.onSurface,
+          navigationRailUnselectedLabelSchemeColor: SchemeColor.onSurface,
+          navigationRailMutedUnselectedLabel: false,
+          navigationRailSelectedIconSchemeColor: SchemeColor.onSurface,
+          navigationRailUnselectedIconSchemeColor: SchemeColor.onSurface,
+          navigationRailMutedUnselectedIcon: false,
+          navigationRailIndicatorSchemeColor: SchemeColor.secondaryContainer,
+          navigationRailIndicatorOpacity: 1.00,
+          navigationRailBackgroundSchemeColor: SchemeColor.surface,
+          navigationRailLabelType: NavigationRailLabelType.none,
+        ),
+        keyColors: const FlexKeyColors(),
+        visualDensity: FlexColorScheme.comfortablePlatformDensity,
+        useMaterial3: true,
+        swapLegacyOnMaterial3: true,
+        // To use the Playground font, add GoogleFonts package and uncomment
+        // fontFamily: GoogleFonts.notoSans().fontFamily,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
