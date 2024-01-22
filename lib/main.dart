@@ -1,4 +1,4 @@
-import 'package:eventichs_flutter/MyAppState.dart';
+import 'package:eventichs_flutter/myAppState.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
