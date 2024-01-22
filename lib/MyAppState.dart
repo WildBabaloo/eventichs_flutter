@@ -6,10 +6,12 @@ import 'package:eventichs_flutter/entities/user.dart';
 class MyAppState extends ChangeNotifier {
   late List<User> users;
   late List<Organisation> organisations;
+  late List<Event> events;
 
   MyAppState() {
     users = seedDataUsers();
     organisations = seedDataOrganisations();
+    events = seedDataEvents();
   }
 
   List<User> seedDataUsers() {
