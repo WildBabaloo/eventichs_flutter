@@ -22,6 +22,11 @@ class _HomeClientState extends State<HomeClient> {
     return Scaffold(
         body: ListView(
           children: [
+            const SafeArea(
+              child: Image(
+                image: AssetImage("assets/eventichs_logo.jpg"),
+              )
+              ),
             Container(
               child: const Padding(
                 padding: EdgeInsets.all(16.0),
