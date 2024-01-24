@@ -23,39 +23,39 @@ class Event {
       required this.endTime,
       required this.isPublic});
 
-  get getId => this.id;
+  get getId => id;
 
   set setId(id) => this.id = id;
 
-  get getEventHost => this.eventHost;
+  get getEventHost => eventHost;
 
   set setEventHost(eventHost) => this.eventHost = eventHost;
 
-  get getAttendies => this.attendies;
+  get getAttendies => attendies;
 
   set setAttendies(attendies) => this.attendies = attendies;
 
-  get getName => this.name;
+  get getName => name;
 
   set setName(name) => this.name = name;
 
-  get getDescription => this.description;
+  get getDescription => description;
 
   set setDescription(description) => this.description = description;
 
-  get getLocation => this.location;
+  get getLocation => location;
 
   set setLocation(location) => this.location = location;
 
-  get getStartTime => this.startTime;
+  get getStartTime => startTime;
 
   set setStartTime(startTime) => this.startTime = startTime;
 
-  get getEndTime => this.endTime;
+  get getEndTime => endTime;
 
   set setEndTime(endTime) => this.endTime = endTime;
 
-  get getIsPublic => this.isPublic;
+  get getIsPublic => isPublic;
 
   set setIsPublic(isPublic) => this.isPublic = isPublic;
 }

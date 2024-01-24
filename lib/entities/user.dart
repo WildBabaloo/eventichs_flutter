@@ -1,4 +1,3 @@
-import 'package:provider/provider.dart';
 
 class User {
   int id;
@@ -14,23 +13,23 @@ class User {
       required this.email,
       required this.password});
 
-  get getId => this.id;
+  get getId => id;
 
   set setId(id) => this.id = id;
 
-  get getFirstName => this.firstName;
+  get getFirstName => firstName;
 
   set setFirstName(firstName) => this.firstName = firstName;
 
-  get getLastName => this.lastName;
+  get getLastName => lastName;
 
   set setLastName(lastName) => this.lastName = lastName;
 
-  get getEmail => this.email;
+  get getEmail => email;
 
   set setEmail(email) => this.email = email;
 
-  get getPassword => this.password;
+  get getPassword => password;
 
   set setPassword(password) => this.password = password;
 }

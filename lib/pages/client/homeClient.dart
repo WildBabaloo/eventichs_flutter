@@ -1,7 +1,6 @@
 import 'package:eventichs_flutter/entities/event.dart';
 import 'package:eventichs_flutter/myAppState.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -24,7 +23,9 @@ class _HomeClientState extends State<HomeClient> {
           children: [
             const SafeArea(
               child: Image(
-                image: AssetImage("assets/eventichs_logo.jpg"),
+                image: AssetImage("assets/images/eventichs_logo_transparent.png"),
+                height: 100,
+                width: 80
               )
               ),
             Container(

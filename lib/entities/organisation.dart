@@ -10,15 +10,15 @@ class Organisation {
       required this.userOwner,
       required this.organisationName,});
 
-  get getId => this.id;
+  get getId => id;
 
   set setId(id) => this.id = id;
 
-  get getUserOwner => this.userOwner;
+  get getUserOwner => userOwner;
 
   set setUserOwner(userOwner) => this.userOwner = userOwner;
 
-  get getOrganisationName => this.organisationName;
+  get getOrganisationName => organisationName;
 
   set setOrganisationName(organisationName) =>
       this.organisationName = organisationName;
