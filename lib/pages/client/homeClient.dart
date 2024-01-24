@@ -103,6 +103,7 @@ class _HomeClientState extends State<HomeClient> {
                 backgroundColor:
                     Theme.of(context).colorScheme.secondaryContainer,
                 tabBackgroundColor: Theme.of(context).colorScheme.primary,
+                activeColor: Theme.of(context).colorScheme.onPrimary,
                 gap: 12,
                 padding: const EdgeInsets.all(20),
                 tabs: const [
