@@ -1,4 +1,5 @@
 import 'package:eventichs_flutter/myAppState.dart';
+import 'package:eventichs_flutter/pages/client/homeClient.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
       child: MaterialApp(
-        themeMode: ThemeMode.dark,
+        themeMode: ThemeMode.light,
         theme: FlexThemeData.light(
           scheme: FlexScheme.deepOrangeM3,
           subThemesData: const FlexSubThemesData(
@@ -100,7 +101,7 @@ class MyApp extends StatelessWidget {
           // To use the Playground font, add GoogleFonts package and uncomment
           // fontFamily: GoogleFonts.notoSans().fontFamily,
         ),
-        home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        home: const HomeClient()
       ),
     );
   }
