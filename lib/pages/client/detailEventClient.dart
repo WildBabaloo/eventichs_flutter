@@ -16,38 +16,93 @@ class _DetailEventClientState extends State<DetailEventClient> {
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
+    var eventHostName = widget.event.eventHost.organisationName;
+    var startTime = widget.event.startTime;
+    var endTime = widget.event.endTime;
+    var locationEvent = widget.event.location;
+    var numberAttendies = widget.event.attendies.length;
     return Scaffold(
         body: ListView(children: [
-      SafeArea(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              margin: const EdgeInsets.only(
-                  left: 16), // Adjust the left margin as needed
-              child: const Icon(
-                Icons.arrow_back,
-                size: 30,
+          SafeArea(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(
+                      left: 16), // Adjust the left margin as needed
+                  child: const Icon(
+                    Icons.arrow_back,
+                    size: 30,
+                  ),
+                ),
+                const Image(
+                  image: AssetImage(
+                      "assets/images/eventichs_logo_transparent.png"),
+                  height: 100,
+                  width: 80,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(
+                      right: 16), // Adjust the right margin as needed
+                  child: const Icon(
+                    Icons.favorite,
+                    size: 30,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Center(
+              child: Text(
+            widget.event.name,
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+          )),
+          const Divider(),
+          Row(
+            children: [
+              const Icon(
+                Icons.person,
               ),
-            ),
-            const Image(
-              image: AssetImage("assets/images/eventichs_logo_transparent.png"),
-              height: 100,
-              width: 80,
-            ),
-            Container(
-              margin: const EdgeInsets.only(
-                  right: 16), // Adjust the right margin as needed
-              child: const Icon(
-                Icons.favorite,
-                size: 30,
+              Flexible(child: Text(" By: $eventHostName")),
+            ],
+          ),
+          Row(
+            children: [
+              const Icon(
+                Icons.group,
               ),
-            ),
-          ],
-        ),
-      ),
-    ]),
-    bottomNavigationBar: Container(
+              Flexible(child: Text(" $numberAttendies people going to this event")),
+            ],
+          ),
+          const Divider(),
+          Row(
+            children: [
+              const Icon(
+                Icons.schedule,
+              ),
+              Flexible(child: Text(" Start: $startTime")),
+            ],
+          ),
+          Row(
+            children: [
+              const Icon(
+                Icons.schedule,
+              ),
+              Flexible(child: Text(" End: $endTime")),
+            ],
+          ),
+          const Divider(),
+          Row(
+            children: [
+              const Icon(
+                Icons.location_on,
+              ),
+              Flexible(child: Text(" Location: $locationEvent")),
+            ],
+          ),
+        
+        ]),
+        bottomNavigationBar: Container(
             color: Theme.of(context).colorScheme.secondaryContainer,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
@@ -74,8 +129,6 @@ class _DetailEventClientState extends State<DetailEventClient> {
                   GButton(icon: Icons.account_circle, text: 'Profil')
                 ],
               ),
-            )
-      )
-    );
+            )));
   }
 }
