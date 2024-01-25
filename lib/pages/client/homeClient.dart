@@ -62,34 +62,32 @@ class _HomeClientState extends State<HomeClient> {
               ),
             ),
             for (var event in events)
-              Container(
-                child: Card(
-                  elevation: 10,
-                  color: Theme.of(context).colorScheme.secondaryContainer,
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                        color: Theme.of(context).colorScheme.outline),
-                    borderRadius: const BorderRadius.all(Radius.circular(12)),
-                  ),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context, 
-                        MaterialPageRoute(
-                          builder: (context) => DetailEventClient(event: event)
-                          )
-                        );
-                    },
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        ListTile(
-                          title: Text(event.name),
-                          subtitle: Text(event.description),
-                          trailing: const Icon(Icons.favorite),
-                        ),
-                      ],
-                    ),
+              Card(
+                elevation: 10,
+                color: Theme.of(context).colorScheme.secondaryContainer,
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(
+                      color: Theme.of(context).colorScheme.outline),
+                  borderRadius: const BorderRadius.all(Radius.circular(12)),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context, 
+                      MaterialPageRoute(
+                        builder: (context) => DetailEventClient(event: event)
+                        )
+                      );
+                  },
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      ListTile(
+                        title: Text(event.name),
+                        subtitle: Text(event.description),
+                        trailing: const Icon(Icons.favorite),
+                      ),
+                    ],
                   ),
                 ),
               )

@@ -1,6 +1,7 @@
 import 'package:eventichs_flutter/entities/event.dart';
 import 'package:eventichs_flutter/myAppState.dart';
 import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:provider/provider.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:map_launcher/map_launcher.dart';
@@ -22,6 +23,7 @@ class _DetailEventClientState extends State<DetailEventClient> {
     var endTime = widget.event.endTime;
     var locationEvent = widget.event.location;
     var numberAttendies = widget.event.attendies.length;
+    var eventAddress = widget.event.location;
     return Scaffold(
         body: ListView(children: [
           SafeArea(
@@ -103,7 +105,7 @@ class _DetailEventClientState extends State<DetailEventClient> {
             ],
           ),
           ElevatedButton(
-              onPressed: mapLaunch, child: const Text("View in maps app"))
+              onPressed: () => mapLaunch(eventAddress), child: const Text("View in maps app"))
         ]),
         bottomNavigationBar: Container(
             color: Theme.of(context).colorScheme.secondaryContainer,
@@ -135,11 +137,14 @@ class _DetailEventClientState extends State<DetailEventClient> {
             )));
   }
 
-  void mapLaunch() async {
+  void mapLaunch(String address) async {
+    List<Location> locations = await locationFromAddress(address);
+    final latitude = locations[0].toString();
+    print(latitude);
     final availableMaps = await MapLauncher.installedMaps;
 
     await availableMaps.first.showMarker(
-        coords: Coords(37.759392, -122.5107336),
+        coords: Coords(-122.4324, -122.5107336),
         title: "Ocean Beach",
         zoom: 50);
   }
