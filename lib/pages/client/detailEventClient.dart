@@ -3,6 +3,7 @@ import 'package:eventichs_flutter/myAppState.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:map_launcher/map_launcher.dart';
 
 class DetailEventClient extends StatefulWidget {
   const DetailEventClient({super.key, required this.event});
@@ -100,7 +101,7 @@ class _DetailEventClientState extends State<DetailEventClient> {
               Flexible(child: Text(" Location: $locationEvent")),
             ],
           ),
-        // Add elevated button 
+        ElevatedButton(onPressed: mapLaunch, child: const Text("View in maps app"))
         ]),
         bottomNavigationBar: Container(
             color: Theme.of(context).colorScheme.secondaryContainer,
@@ -131,4 +132,16 @@ class _DetailEventClientState extends State<DetailEventClient> {
               ),
             )));
   }
+
+  void mapLaunch() async {
+
+final availableMaps = await MapLauncher.installedMaps;
+
+await availableMaps.first.showMarker(
+  coords: Coords(37.759392, -122.5107336),
+  title: "Ocean Beach",
+  zoom: 50
+);
+  }
+
 }
