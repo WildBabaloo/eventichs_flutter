@@ -25,6 +25,7 @@ class _DetailEventClientState extends State<DetailEventClient> {
     var locationEvent = widget.event.location;
     var numberAttendies = widget.event.attendies.length;
     var eventAddress = widget.event.location;
+    var descriptionEvent = widget.event.description;
     var selectedIndex = 0;
     return Scaffold(
         body: Column(children: [
@@ -107,8 +108,20 @@ class _DetailEventClientState extends State<DetailEventClient> {
             ],
           ),
           ElevatedButton(
-              onPressed: () => mapLaunch(eventAddress), child: const Text("View in maps app"))
-        ]),
+              onPressed: () => mapLaunch(eventAddress), child: const Text("View in maps app")
+            ),
+        const Divider(),
+        Row(
+            children: [
+              const Icon(
+                Icons.description,
+              ),
+              Flexible(child: Text(" Description: $descriptionEvent")),
+            ],
+          ),
+        const Divider()
+        ],),
+
         bottomNavigationBar: Container(
             color: Theme.of(context).colorScheme.secondaryContainer,
             child: Padding(

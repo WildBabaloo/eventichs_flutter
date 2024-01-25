@@ -30,7 +30,7 @@ class _HomeClientState extends State<HomeClient> {
     var appState = context.watch<MyAppState>();
 
     return Scaffold(
-      body: ListView(
+      body: Column(
         children: [
           const SafeArea(
             child: Image(
@@ -80,15 +80,14 @@ class _HomeClientState extends State<HomeClient> {
           if (labelIndex == 0)
             ListView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: events.length,
               itemBuilder: (context, index) {
                 return buildEventCard(events[index]);
               },
             ),
           if (labelIndex == 1)
-            Container(
-              height: 300, // Adjust the height as needed
+            Expanded(
               child: GoogleMap(
                 onMapCreated: _onMapCreated,
                 initialCameraPosition: CameraPosition(
