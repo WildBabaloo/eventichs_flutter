@@ -100,7 +100,7 @@ class _DetailEventClientState extends State<DetailEventClient> {
               Flexible(child: Text(" Location: $locationEvent")),
             ],
           ),
-        
+        // Add elevated button 
         ]),
         bottomNavigationBar: Container(
             color: Theme.of(context).colorScheme.secondaryContainer,
