@@ -72,7 +72,8 @@ class _DetailEventClientState extends State<DetailEventClient> {
               const Icon(
                 Icons.group,
               ),
-              Flexible(child: Text(" $numberAttendies people going to this event")),
+              Flexible(
+                  child: Text(" $numberAttendies people going to this event")),
             ],
           ),
           const Divider(),
@@ -101,7 +102,8 @@ class _DetailEventClientState extends State<DetailEventClient> {
               Flexible(child: Text(" Location: $locationEvent")),
             ],
           ),
-        ElevatedButton(onPressed: mapLaunch, child: const Text("View in maps app"))
+          ElevatedButton(
+              onPressed: mapLaunch, child: const Text("View in maps app"))
         ]),
         bottomNavigationBar: Container(
             color: Theme.of(context).colorScheme.secondaryContainer,
@@ -134,14 +136,11 @@ class _DetailEventClientState extends State<DetailEventClient> {
   }
 
   void mapLaunch() async {
+    final availableMaps = await MapLauncher.installedMaps;
 
-final availableMaps = await MapLauncher.installedMaps;
-
-await availableMaps.first.showMarker(
-  coords: Coords(37.759392, -122.5107336),
-  title: "Ocean Beach",
-  zoom: 50
-);
+    await availableMaps.first.showMarker(
+        coords: Coords(37.759392, -122.5107336),
+        title: "Ocean Beach",
+        zoom: 50);
   }
-
 }
