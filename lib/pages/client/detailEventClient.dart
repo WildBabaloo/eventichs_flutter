@@ -1,5 +1,6 @@
 import 'package:eventichs_flutter/entities/event.dart';
 import 'package:eventichs_flutter/myAppState.dart';
+import 'package:eventichs_flutter/pages/client/googleMapAPITest.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:provider/provider.dart';
@@ -24,8 +25,9 @@ class _DetailEventClientState extends State<DetailEventClient> {
     var locationEvent = widget.event.location;
     var numberAttendies = widget.event.attendies.length;
     var eventAddress = widget.event.location;
+    var selectedIndex = 0;
     return Scaffold(
-        body: ListView(children: [
+        body: Column(children: [
           SafeArea(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -118,6 +120,19 @@ class _DetailEventClientState extends State<DetailEventClient> {
                 activeColor: Theme.of(context).colorScheme.onPrimary,
                 gap: 12,
                 padding: const EdgeInsets.all(20),
+                onTabChange: (index) {
+                  setState(() {
+                    selectedIndex = index;
+                    if (selectedIndex == 2) {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(
+                          builder: (context) => const GoogleMapAPITest(),
+                          ),
+                        );
+                    }
+                  });
+                },
                 tabs: const [
                   GButton(
                     icon: Icons.home,
@@ -128,8 +143,8 @@ class _DetailEventClientState extends State<DetailEventClient> {
                     text: 'Favoris',
                   ),
                   GButton(
-                    icon: Icons.add,
-                    text: 'Ajouter',
+                    icon: Icons.map,
+                    text: 'Map',
                   ),
                   GButton(icon: Icons.account_circle, text: 'Profil')
                 ],
