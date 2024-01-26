@@ -172,7 +172,7 @@ class _DetailEventClientState extends State<DetailEventClient> {
     final availableMaps = await MapLauncher.installedMaps;
 
     await availableMaps.first.showMarker(
-        coords: Coords(-122.4324, -122.5107336),
+        coords: Coords(45.55235416852877, -73.55588160712402),
         title: "Ocean Beach",
         zoom: 50);
   }

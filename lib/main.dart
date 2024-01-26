@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
       child: MaterialApp(
-        themeMode: ThemeMode.light,
+        themeMode: ThemeMode.dark,
         theme: FlexThemeData.light(
           scheme: FlexScheme.deepOrangeM3,
           subThemesData: const FlexSubThemesData(
