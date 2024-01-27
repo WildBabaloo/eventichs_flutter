@@ -1,5 +1,6 @@
 import 'package:eventichs_flutter/entities/event.dart';
 import 'package:eventichs_flutter/myAppState.dart';
+import 'package:eventichs_flutter/pages/client/chatGPTAPITest.dart';
 import 'package:eventichs_flutter/pages/client/googleMapAPITest.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
@@ -144,6 +145,14 @@ class _DetailEventClientState extends State<DetailEventClient> {
                           ),
                         );
                     }
+                    if (selectedIndex == 1) {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(
+                          builder: (context) => const ChatGPTAPITest(),
+                          ),
+                        );
+                    }
                   });
                 },
                 tabs: const [
@@ -152,8 +161,8 @@ class _DetailEventClientState extends State<DetailEventClient> {
                     text: 'Home',
                   ),
                   GButton(
-                    icon: Icons.favorite,
-                    text: 'Favoris',
+                    icon: Icons.person_2,
+                    text: 'Ai Assistant',
                   ),
                   GButton(
                     icon: Icons.map,
