@@ -1,6 +1,8 @@
 # eventichs_flutter
 
-A new Flutter project.
+Eventichs made with Flutter 
+
+**PLEASE NOTE THAT THIS PROJECT IS NOT COMPLETE, IT WAS USED AS PRACTICE FOR THE AMC 2024 (hackathon) SO ONLY NEW STUFF THAT I HAVE NEVER BEFORE IS USED IN THIS APPLICATION**
 
 ## Getting Started
 
